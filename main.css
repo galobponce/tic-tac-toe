@@ -1,0 +1,85 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.border-all {
+    border: .2em solid RGBA(255, 255, 255, 0.16);
+}
+
+.border-right {
+    border-right: .2em solid RGBA(255, 255, 255, 0.16);
+}
+
+.border-left {
+    border-left: .2em solid RGBA(255, 255, 255, 0.16);
+}
+
+.border-top {
+    border-top: .2em solid RGBA(255, 255, 255, 0.16);
+}
+
+.border-bottom {
+    border-bottom: .2em solid RGBA(255, 255, 255, 0.16);
+}
+
+
+.color-x {
+    color: #48BB78;
+}
+
+.color-o {
+    color: #3182CE;
+}
+
+/* End General */
+
+
+
+/* App Container */
+body {
+    background-color: #1A202C;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+/* End App Container */
+
+
+
+/* Grid Container */
+#grid-container {
+    display: grid;
+
+    width: 20em;
+    height: 20em;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+}
+
+.grid {
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid span {
+    font-size: 4.5em;
+}
+
+/* End Grid Container */
