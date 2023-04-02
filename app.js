@@ -1,4 +1,5 @@
 // Get DOM elements
+const $subtitle = document.getElementById('subtitle');
 const $gridElements = document.querySelectorAll('.grid');
 
 
@@ -192,14 +193,14 @@ const game = (() => {
             _finished = true;
 
             if (lastPlay === 'P') {
-                alert('You Won! ;)')
+                $subtitle.textContent = 'You won! 😄';
             } else {
-                alert('You Lost! ;(')
+                $subtitle.textContent = 'You lost! 🤣';
             }
 
         } else if (gameBoard.isBoardFull()) {
             _finished = true;
-            alert('It is a draw!');
+            $subtitle.textContent = 'Its a draw! 🥲';
         }
     };
 

@@ -45,9 +45,11 @@ html {
 
 /* App Container */
 body {
+    color: #f0f8ff;
     background-color: #1A202C;
 
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
 
@@ -55,6 +57,19 @@ body {
 }
 
 /* End App Container */
+
+
+
+/* Title and Subtitle */
+#title {
+    margin-bottom: .2em;
+}
+
+#subtitle {
+    margin-bottom: 2em;
+}
+
+/* EndTitle and Subtitle */
 
 
 
