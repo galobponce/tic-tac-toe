@@ -1,14 +1,14 @@
 // Get DOM elements
 const $subtitle = document.getElementById('subtitle');
 const $gridElements = document.querySelectorAll('.grid');
+const $restartButton = document.getElementById('restart');
 
 
 // Game Board Module
 const gameBoard = (() => {
 
     // Properties //
-    const _board = [...Array(9)];
-    const _$gridBoard = document.getElementById('grid-container');
+    let _board = [...Array(9)];
 
 
     // Public Functions //
@@ -36,10 +36,10 @@ const gameBoard = (() => {
     const clear = () => {
         _board = _board.fill(undefined);
 
-        _$gridBoard.forEach(gridElement => {
-            gridElement.firstElementChild.innerHTML = '';
-            gridElement.firstElementChild.classList.remove('color-x');
+        $gridElements.forEach(gridElement => {
+            gridElement.firstElementChild.textContent = '';
             gridElement.firstElementChild.classList.remove('color-o');
+            gridElement.firstElementChild.classList.remove('color-x');
         });
     }
 
@@ -82,7 +82,6 @@ const gameBoard = (() => {
         getColumnsAsArrays,
         getDiagonalsAsArrays,
         getValue,
-        _board,
         setValue,
         isBoardFull,
         clear
@@ -106,6 +105,18 @@ const game = (() => {
      * Adds event listeners to DOM elements
      */
     const initialize = () => {
+
+
+        // Event listener for restart
+        $restartButton.addEventListener('click', () => {
+            gameBoard.clear();
+            _finished = false;
+            _isPlayerTurn = true;
+            _isComputerTurn = false;
+            _computerGridElementChoice = null;
+            $subtitle.textContent = 'Make your move... 😃';
+        });
+
 
         // Click event listener for grid elements
         $gridElements.forEach(gridElement => {
